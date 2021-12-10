@@ -29,7 +29,7 @@
 #include "mbedtls/timing.h"
 #include "mbedtls/base64.h"
 
-#include <amqp.h>
+#include  <rabbitmq-c/amqp.h>
 
 AMQP_BEGIN_DECLS
 
@@ -42,7 +42,7 @@ AMQP_BEGIN_DECLS
  *
  * \since v0.4.0 
  */
-AMQP_PUBLIC_FUNCTION
+AMQP_EXPORT
 amqp_socket_t *AMQP_CALL amqp_mbedtls_socket_new(amqp_connection_state_t state);
 
 /**
@@ -57,7 +57,7 @@ amqp_socket_t *AMQP_CALL amqp_mbedtls_socket_new(amqp_connection_state_t state);
  *
  * \since v0.4.0
  */
-AMQP_PUBLIC_FUNCTION
+AMQP_EXPORT
 void AMQP_CALL amqp_mbedtls_socket_set_sockfd(amqp_socket_t *self, int sockfd);
 
 /**
@@ -68,7 +68,7 @@ void AMQP_CALL amqp_mbedtls_socket_set_sockfd(amqp_socket_t *self, int sockfd);
  * \return A pointer to the internal MBEDTLS context.  
  *  
  */
-AMQP_PUBLIC_FUNCTION
+AMQP_EXPORT
 void *AMQP_CALL amqp_mbedtls_socket_get_context(amqp_socket_t *base);
 /**
  * set flag to Enable or disable peer verification.
@@ -77,19 +77,19 @@ void *AMQP_CALL amqp_mbedtls_socket_get_context(amqp_socket_t *base);
  *  Peer verification is enabled by default.
  *
  */
-AMQP_PUBLIC_FUNCTION
+AMQP_EXPORT
 void AMQP_CALL amqp_mbedtls_set_auth_mode(const char *key);
 /**
  * Set the CA certificate file path.
  *
  */
-AMQP_PUBLIC_FUNCTION
+AMQP_EXPORT
 void AMQP_CALL amqp_mbedtls_set_cacert_file(const char *cacert);
 /**
  * Set the client certificate file and key file path.
  *
  */
-AMQP_PUBLIC_FUNCTION
+AMQP_EXPORT
 void AMQP_CALL amqp_mbedtls_set_crt_file(const char *crtcert, const char *crtkey);
 
 AMQP_END_DECLS

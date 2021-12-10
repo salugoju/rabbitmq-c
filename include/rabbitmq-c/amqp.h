@@ -670,7 +670,17 @@ typedef enum amqp_status_enum_ {
                                                          certificate failed. */
   AMQP_STATUS_SSL_CONNECTION_FAILED = -0x0203, /**< SSL handshake failed. */
   AMQP_STATUS_SSL_SET_ENGINE_FAILED = -0x0204, /**< SSL setting engine failed */
-  _AMQP_STATUS_SSL_NEXT_VALUE = -0x0205        /**< Internal value */
+  _AMQP_STATUS_SSL_NEXT_VALUE = -0x0205 ,       /**< Internal value */
+  AMQP_STATUS_MBEDTLS_ERROR = -0x0300,                  /**< A generic MBEDTLS error
+														 occurred. */
+	AMQP_STATUS_MBEDTLS_HOSTNAME_VERIFY_FAILED = -0x0301, /**< MBEDTLS validation of
+														   hostname against
+														   peer certificate
+														   failed */
+	AMQP_STATUS_MBEDTLS_PEER_VERIFY_FAILED = -0x0302,     /**< MBEDTLS validation of peer
+														   certificate failed. */
+	AMQP_STATUS_MBEDTLS_CONNECTION_FAILED = -0x0303, /**< MBEDTLS handshake failed. */	
+	_AMQP_STATUS_MBEDTLS_NEXT_VALUE = -0x0304        /**< Internal value */
 } amqp_status_enum;
 
 /**
